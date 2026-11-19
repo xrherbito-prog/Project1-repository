@@ -1,0 +1,42 @@
+class BankAccount:
+    def __init__(self, account_number, balance):
+
+        self.__account_number = account_number
+        self.__balance = balance
+
+
+    @property
+    def account_number(self):
+
+        return self.__account_number
+
+    @property
+    def balance(self):
+
+        return self.__balance
+
+  #trad
+    def set_account_number(self, account_number):
+        self.__account_number = account_number
+
+    def set_balance(self, balance):
+
+        if balance < 0:
+            print("Warning: balance cannot be negative — ignored.")
+        else:
+            self.__balance = balance
+
+
+# ------------------------------------------------------------
+#  Step 6 — Test your class.
+# ------------------------------------------------------------
+acct = BankAccount("ACC1", 500)
+
+print(acct.account_number)
+print(acct.balance)
+
+acct.set_balance(800)
+print(acct.balance)
+
+acct.set_balance(-50)
+print(acct.balance)
